@@ -4,14 +4,26 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 
+
 function Placeholder({ title }) {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-20 text-white">
+    <main className="min-h-screen bg-slate-50 px-6 py-20 text-slate-900">
       <div className="mx-auto max-w-6xl">
-        <h1 className="text-3xl font-bold">{title}</h1>
-        <p className="mt-4 text-slate-400">
-          This section is currently under development.
+        <p className="mb-3 font-semibold text-blue-700">
+          INTERNSHIP DOCUMENTATION
         </p>
+
+        <h1 className="text-3xl font-bold md:text-4xl">
+          {title}
+        </h1>
+
+        <div className="mt-8 rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+          <p className="text-slate-600">
+            This section is currently under development.
+            Daily internship activities, tasks and supporting
+            evidence will be displayed here.
+          </p>
+        </div>
       </div>
     </main>
   )
