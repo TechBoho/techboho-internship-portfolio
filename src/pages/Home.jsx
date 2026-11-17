@@ -1,18 +1,41 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Code2, Database, CalendarDays } from 'lucide-react'
+import {
+  ArrowRight,
+  Code2,
+  Database,
+  CalendarDays,
+} from 'lucide-react'
+
+const features = [
+  {
+    icon: Code2,
+    title: 'Software Development',
+    description: 'Building practical software solutions.',
+  },
+  {
+    icon: Database,
+    title: 'Backend Development',
+    description: 'Working with APIs and databases.',
+  },
+  {
+    icon: CalendarDays,
+    title: 'Internship Documentation',
+    description: 'Tracking daily work and progress.',
+  },
+]
 
 function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <p className="font-semibold text-blue-400">
+        <p className="font-semibold text-blue-700">
           TECHBOHO SOLUTIONS
         </p>
 
-        <h1 className="mt-6 text-4xl font-bold md:text-6xl">
+        <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-6xl">
           Building Solutions.
           <br />
-          <span className="text-blue-500">
+          <span className="text-blue-600">
             Documenting Progress.
           </span>
         </h1>
@@ -25,44 +48,32 @@ function Home() {
 
         <Link
           to="/dashboard"
-          className="mt-8 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium hover:bg-blue-700"
+          className="mt-8 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-sm hover:bg-blue-700"
         >
           View Internship Dashboard
           <ArrowRight size={18} />
         </Link>
       </section>
 
-      <section className="border-t border-slate-800 bg-slate-900/40">
+      <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-3">
-          {[
-            {
-              icon: Code2,
-              title: 'Software Development',
-              description: 'Building practical software solutions.',
-            },
-            {
-              icon: Database,
-              title: 'Backend Development',
-              description: 'Working with APIs and databases.',
-            },
-            {
-              icon: CalendarDays,
-              title: 'Internship Documentation',
-              description: 'Tracking daily work and progress.',
-            },
-          ].map((item) => {
+          {features.map((item) => {
             const Icon = item.icon
 
             return (
               <div
                 key={item.title}
-                className="rounded-xl border border-slate-800 bg-slate-900 p-6"
+                className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <Icon className="mb-4 text-blue-400" size={30} />
-                <h3 className="text-xl font-semibold">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
+                  <Icon className="text-blue-600" size={26} />
+                </div>
+
+                <h3 className="text-xl font-semibold text-slate-900">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-slate-400">
+
+                <p className="mt-3 text-slate-600">
                   {item.description}
                 </p>
               </div>

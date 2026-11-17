@@ -5,9 +5,24 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+}
+
+button, a {
+  transition: all 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
 }
